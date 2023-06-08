@@ -25,3 +25,10 @@ for (let i = 0; i < btns_open_modal.length; i++) {
 // make a closing modal button click function
 btn_close_moda.addEventListener("click", close_modal_function);
 overlay.addEventListener("click", close_modal_function);
+
+// add key press event for close modal
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    close_modal_function();
+  }
+});
