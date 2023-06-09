@@ -12,7 +12,12 @@ score0EL.textContent = 0;
 score1EL.textContent = 0;
 diceEl.classList.add("hidden");
 
-// Rolling ice functionality
+// Rolling dice functionality
 btn_roll.addEventListener("click", function () {
-  const dice = Math.tan(Math.random() * 6);
+  // generating a random roll dice
+  const dice = Math.trunc(Math.random() * 6) + 1;
+
+  // display dice
+  diceEl.classList.remove("hidden");
+  diceEl.src = `Dice-${dice}.png`;
 });
