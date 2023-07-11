@@ -35,11 +35,15 @@ document.addEventListener("keydown", function (e) {
 ////////////////////////////////////////////////////////////////
 const header = document.querySelector(".header");
 const allSections = document.querySelectorAll(".section");
-document.getElementById("section--1");
 const allButtons = document.getElementsByTagName("button");
 
 const message = document.createElement("div");
 message.classList.add("cookie-message");
-
-message.innerHTML = `We used cookied fro improved funcitionality and analytics. <button class="btn btn--close-cookie">Got it!</button> `;
+message.innerHTML = `We used cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>`;
 header.append(message);
+
+document
+  .querySelector(".btn--close-cookie")
+  .addEventListener("click", function () {
+    message.remove();
+  });
