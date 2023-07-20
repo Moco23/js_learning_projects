@@ -47,3 +47,8 @@ document
   .addEventListener("click", function () {
     message.remove();
   });
+
+////////////////////////////////////////////////////////////////
+// style of the cookie message
+message.style.backgroundColor = "#37383d";
+message.style.width = "120%";
