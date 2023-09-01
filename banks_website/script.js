@@ -7,6 +7,7 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const logo = document.querySelector(".nav__logo");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -36,7 +37,6 @@ document.addEventListener("keydown", function (e) {
 const header = document.querySelector(".header");
 const allSections = document.querySelectorAll(".section");
 const allButtons = document.getElementsByTagName("button");
-
 const message = document.createElement("div");
 message.classList.add("cookie-message");
 message.innerHTML = `We used cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>`;
@@ -57,3 +57,7 @@ message.style.width = "120%";
 // working with computedStyle
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
+
+// start working with smoth scroll
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
