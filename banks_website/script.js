@@ -52,3 +52,8 @@ document
 // style of the cookie message
 message.style.backgroundColor = "#37383d";
 message.style.width = "120%";
+
+////////////////////////////////////////////////////////////////
+// working with computedStyle
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
