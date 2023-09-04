@@ -63,7 +63,7 @@ const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 
 // add event listeners on scroll button
-btnScrollTo.addEventListener("click", function (e) {
+btnScrollTo.addEventListener("click", function () {
   const s1coords = section1.getBoundingClientRect();
 
   // scrolling
@@ -85,3 +85,10 @@ btnScrollTo.addEventListener("click", function (e) {
     behavior: "smooth",
   });
 });
+
+const h1 = document.querySelector(`h1`);
+const alertH1 = function (e) {
+  alert(`addEventLisener: Great! You are reading the heading :D`);
+  h1.removeEventListener("mouseenter", alertH1);
+};
+h1.addEventListener("mouseenter", alertH1);
