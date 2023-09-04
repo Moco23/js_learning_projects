@@ -31,6 +31,17 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
+// implementing smooth scroll to navigation
+document.querySelector(`.nav__links`).addEventListener("click", function (e) {
+  // matching strategy
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+});
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
@@ -65,27 +76,13 @@ const section1 = document.querySelector("#section--1");
 // add event listeners on scroll button
 btnScrollTo.addEventListener("click", function () {
   const s1coords = section1.getBoundingClientRect();
-
-  // scrolling
-  // window.scrollTo(
-  //   s1coords.left + window.pageXOffset,
-  //   s1coords.top + window.pageYOffset
-  // );
-
-  // smooth animation
-
-  // window.scrollTo({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset,
-  //   behavior: "smooth",
-  // });
-
   // modern scroll animaiton
   section1.scrollIntoView({
     behavior: "smooth",
   });
 });
 
+// mouseenter (css hove)
 const h1 = document.querySelector(`h1`);
 const alertH1 = function (e) {
   alert(`addEventLisener: Great! You are reading the heading :D`);
