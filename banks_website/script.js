@@ -18,6 +18,7 @@ const tabsContainer = document.querySelector(".operations__tab-container");
 const tabsContent = document.querySelectorAll(".operations__content");
 const nav = document.querySelector(".nav");
 const imgTargets = document.querySelectorAll("img[data-src]");
+const slides = document.querySelectorAll(".slide");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -149,3 +150,5 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach((img) => imgObserver.observe(img));
+
+// slider
