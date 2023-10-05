@@ -156,6 +156,18 @@ imgTargets.forEach((img) => imgObserver.observe(img));
 
 // slider
 let curSlide = 0;
+const maxSlide = slides.length;
 slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
 
 // slider btns functionality
+slideerBtnRight.addEventListener("click", function () {
+  if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`)
+  );
+});
