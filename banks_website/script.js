@@ -19,6 +19,9 @@ const tabsContent = document.querySelectorAll(".operations__content");
 const nav = document.querySelector(".nav");
 const imgTargets = document.querySelectorAll("img[data-src]");
 const slides = document.querySelectorAll(".slide");
+const slider = document.querySelector("slider");
+const slideerBtnLeft = document.querySelector(".slider__btn--left");
+const slideerBtnRight = document.querySelector(".slider__btn--right");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -152,3 +155,7 @@ const imgObserver = new IntersectionObserver(loadImg, {
 imgTargets.forEach((img) => imgObserver.observe(img));
 
 // slider
+let curSlide = 0;
+slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+
+// slider btns functionality
