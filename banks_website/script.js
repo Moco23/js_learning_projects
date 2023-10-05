@@ -174,4 +174,10 @@ const nexSlide = function () {
   goToSlide(curSlide);
 };
 
+const prevSlide = function () {
+  curSlide--;
+  goToSlide(curSlide);
+};
+
 slideerBtnRight.addEventListener("click", nexSlide);
+slideerBtnLeft.addEventListener("click", prevSlide);
