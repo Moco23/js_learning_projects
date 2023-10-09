@@ -22,6 +22,7 @@ const slides = document.querySelectorAll(".slide");
 const slider = document.querySelector("slider");
 const slideerBtnLeft = document.querySelector(".slider__btn--left");
 const slideerBtnRight = document.querySelector(".slider__btn--right");
+const dotContainer = document.querySelector(".dots");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -158,6 +159,16 @@ imgTargets.forEach((img) => imgObserver.observe(img));
 let curSlide = 0;
 const maxSlide = slides.length;
 
+const crateDots = function () {
+  slides.forEach(function (_, i) {
+    dotContainer.insertAdjacentHTML(
+      "beforeend",
+      `<button class="dots__dot" data-slider="${i}"></button>`
+    );
+  });
+};
+crateDots();
+
 const goToSlide = function (slide) {
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
@@ -189,4 +200,11 @@ slideerBtnLeft.addEventListener("click", prevSlide);
 document.addEventListener("keydown", function (e) {
   if (e.key === "ArrowLeft") prevSlide();
   e.key === "ArrowRight" && nexSlide();
+});
+
+dotContainer.addEventListener("click", function (e) {
+  if (e.target.classList.contains("dots__dot")) {
+    const { slide } = e.target.dataset;
+    goToSlide(slide);
+  }
 });
